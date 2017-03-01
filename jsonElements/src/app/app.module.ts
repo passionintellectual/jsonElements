@@ -1,3 +1,4 @@
+import { SaComponentComponent } from './ui-survey/sa-component/sa-component.component';
 import { SurveyComponent } from './ui-survey/survey/survey.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,7 +17,8 @@ import { SurveyExamplePageComponent } from './survey-example-page/survey-example
     AppComponent,
     SurveyExamplePageComponent,
     PageNotFoundComponent,
-    SurveyComponent
+    SurveyComponent,
+    SaComponentComponent
   ],
   imports: [
     BrowserModule,
