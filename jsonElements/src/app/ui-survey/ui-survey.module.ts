@@ -1,12 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SurveyComponent } from './survey/survey.component';
-import { SaComponentComponent } from './sa-component/sa-component.component';
+import {ISaElementComponentProvider} from './interfaces/isa-element-component-provider';
+import {SaElementComponentProviderService} from './services/SaElementComponentProvider.service';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SurveyComponent} from './survey/survey.component';
+import {SaComponentComponent} from './sa-component/sa-component.component';
 
 @NgModule({
-  imports: [
-    CommonModule
+  imports: [CommonModule],
+  providers: [
+     SaElementComponentProviderService
   ],
-  declarations: [SurveyComponent, SaComponentComponent]
+  declarations: [SurveyComponent, SaComponentComponent],
+  exports:[SurveyComponent, SaComponentComponent]
 })
-export class UiSurveyModule { }
+export class UiSurveyModule {}

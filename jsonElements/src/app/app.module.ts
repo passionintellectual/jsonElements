@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
-
+import { UiSurveyModule } from './ui-survey/ui-survey.module';
 
 import { AppComponent } from './app.component';
 import { SurveyExamplePageComponent } from './survey-example-page/survey-example-page.component';
@@ -16,15 +16,14 @@ import { SurveyExamplePageComponent } from './survey-example-page/survey-example
   declarations: [
     AppComponent,
     SurveyExamplePageComponent,
-    PageNotFoundComponent,
-    SurveyComponent,
-    SaComponentComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+  UiSurveyModule
   ],
   exports: [
   ],
