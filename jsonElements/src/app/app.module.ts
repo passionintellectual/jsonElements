@@ -1,4 +1,4 @@
-import { AppRoutingModule } from './../../.history/src/app/app-routing/app-routing.module_20170301194750';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,15 +14,13 @@ import { SurveyExamplePageComponent } from './survey-example-page/survey-example
   declarations: [
     AppComponent,
     SurveyExamplePageComponent,
-    PageNotFoundComponent,
-    RouterOutlet
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule
-
   ],
   exports: [
   ],
