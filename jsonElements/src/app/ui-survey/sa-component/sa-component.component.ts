@@ -1,7 +1,10 @@
+import { DirectiveResolver } from '@angular/compiler';
+import { PlaceholderDirective } from './../directives/placeholder.directive';
+import { SaComponentFactoryProvider } from './../services/sa-component-factory-provider.service';
+import { ISaComponentFactoryProvider } from './../interfaces/isa-component-factory-provider';
+import { SaInputComponent } from './../sa-input/sa-input.component';
 import { ISaElement } from '../interfaces/isa-element';
-import { SaElementComponentProviderService } from './../services/SaElementComponentProvider.service';
 import { ISaConfig } from '../interfaces/isa-config';
-import { ISaElementComponentProvider } from '../interfaces/isa-element-component-provider';
 import {
   AfterViewInit,
   Component,
@@ -22,10 +25,11 @@ export class SaComponentComponent implements OnInit,
 AfterViewInit {
   @Input()config: any;
 
-constructor(private saElProvider: SaElementComponentProviderService
-, private viewContainer: ViewContainerRef) {}
+constructor(private saElProvider: SaComponentFactoryProvider
+, private viewContainer: ViewContainerRef  ) {}
 
   ngAfterViewInit() {
+
     var aggregatedConfig = this.aggregate();
     this.loadSaElement();
   }
@@ -39,14 +43,16 @@ constructor(private saElProvider: SaElementComponentProviderService
 // <input mdInput placeholder="City">
 // </md-input-container>
 
-this.config.component = MdInputContainer;
-    // if(!this.config.component){
-    //   throw new Error('Component type to resolve found undefined or null.')
-    // }
-    // //Get sa element comonent instance.
-    //  var saEl = this.saElProvider.getSaElement(this.config.component);
-    // //Assigning properties of the sa element component instance
-    // // saEl.loadConfig(<ISaConfig>this.config);
+this.config.component = 'SaInputComponent';
+    if(!this.config.component){
+      throw new Error('Component type to resolve found undefined or null.')
+    }
+    this.config.component = SaInputComponent;
+     var saEl = this.saElProvider.getFactory(this.config.component);
+     var component = this.viewContainer.createComponent(saEl);
+     setTimeout(()=>      { debugger; component.instance['placeholder'] = 'CIITTY'}, 100 );
+
+
   }
   ngOnInit() {}
 

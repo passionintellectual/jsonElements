@@ -1,18 +1,22 @@
-import {ISaElementComponentProvider} from './interfaces/isa-element-component-provider';
-import {SaElementComponentProviderService} from './services/SaElementComponentProvider.service';
+import { SaComponentFactoryProvider } from './services/sa-component-factory-provider.service';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SurveyComponent} from './survey/survey.component';
 import {SaComponentComponent} from './sa-component/sa-component.component';
 import {MaterialModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SaInputComponent } from './sa-input/sa-input.component';
+import { PlaceholderDirective } from './directives/placeholder.directive';
+
 @NgModule({
 imports : [
-  CommonModule, MaterialModule
+  CommonModule, MaterialModule, NgbModule
 ],
+entryComponents:[SaInputComponent],
   providers: [
-     SaElementComponentProviderService
+     SaComponentFactoryProvider
   ],
-  declarations: [SurveyComponent, SaComponentComponent],
+  declarations: [SurveyComponent, SaComponentComponent, SaInputComponent, PlaceholderDirective],
   exports:[SurveyComponent, SaComponentComponent]
 })
 export class UiSurveyModule {}

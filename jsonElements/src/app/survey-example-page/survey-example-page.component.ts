@@ -24,7 +24,8 @@ export class SurveyExamplePageComponent implements OnInit {
         'precision': 2,
         'allowAttachmentsAndComments': false,
         'vendorFieldMapping': 'vendor.vendorInfo.name1',
-        'section': false
+        'section': false,
+        'component': 'SaInputComponent'
       }
     ];
   }

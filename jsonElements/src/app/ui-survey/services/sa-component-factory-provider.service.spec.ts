@@ -1,16 +1,16 @@
+import { SaComponentFactoryProvider } from './sa-component-factory-provider.service';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { SaElementComponentProviderService } from './SaElementComponentProvider.service';
 
 describe('Service: SaElementComponentProvider', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SaElementComponentProviderService]
+      providers: [SaComponentFactoryProvider]
     });
   });
 
-  it('should ...', inject([SaElementComponentProviderService], (service: SaElementComponentProviderService) => {
+  it('should ...', inject([SaComponentFactoryProvider], (service: SaComponentFactoryProvider) => {
     expect(service).toBeTruthy();
   }));
 });
