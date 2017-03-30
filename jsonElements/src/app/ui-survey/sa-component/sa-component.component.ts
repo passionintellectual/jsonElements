@@ -1,5 +1,5 @@
 import { DirectiveResolver } from '@angular/compiler';
-import { PlaceholderDirective } from './../directives/placeholder.directive';
+import { PlaceholderDirective } from '../directives/placeholder/placeholder.directive';
 import { SaComponentFactoryProvider } from './../services/sa-component-factory-provider.service';
 import { ISaComponentFactoryProvider } from './../interfaces/isa-component-factory-provider';
 import { SaInputComponent } from './../sa-input/sa-input.component';
@@ -50,7 +50,15 @@ this.config.component = 'SaInputComponent';
     this.config.component = SaInputComponent;
      var saEl = this.saElProvider.getFactory(this.config.component);
      var component = this.viewContainer.createComponent(saEl);
-     setTimeout(()=>      { debugger; component.instance['placeholder'] = 'CIITTY'}, 100 );
+     setTimeout(()=>      { debugger;
+       // component.instance['placeholderSubject'].next('Cty sub');
+       component.instance['placeholder'] = 'CIITTY';
+       component.instance['placeholderChanged'].subscribe(x=>{
+         console.log('x', x);
+       })
+     }, 1000 );
+
+
 
 
   }

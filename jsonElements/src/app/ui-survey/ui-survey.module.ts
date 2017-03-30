@@ -6,7 +6,8 @@ import {SaComponentComponent} from './sa-component/sa-component.component';
 import {MaterialModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SaInputComponent } from './sa-input/sa-input.component';
-import { PlaceholderDirective } from './directives/placeholder.directive';
+import { PlaceholderDirective } from './directives/placeholder/placeholder.directive';
+import {NgModelDirective} from "./directives/ngmodel/ng-model.directive";
 
 @NgModule({
 imports : [
@@ -16,7 +17,8 @@ entryComponents:[SaInputComponent],
   providers: [
      SaComponentFactoryProvider
   ],
-  declarations: [SurveyComponent, SaComponentComponent, SaInputComponent, PlaceholderDirective],
+  declarations: [SurveyComponent, SaComponentComponent, SaInputComponent, PlaceholderDirective, NgModelDirective
+  ],
   exports:[SurveyComponent, SaComponentComponent]
 })
 export class UiSurveyModule {}
