@@ -8,10 +8,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SaInputComponent } from './sa-input/sa-input.component';
 import { PlaceholderDirective } from './directives/placeholder/placeholder.directive';
 import {NgModelDirective} from "./directives/ngmodel/ng-model.directive";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 imports : [
-  CommonModule, MaterialModule, NgbModule
+  CommonModule, MaterialModule, NgbModule, FormsModule
 ],
 entryComponents:[SaInputComponent],
   providers: [

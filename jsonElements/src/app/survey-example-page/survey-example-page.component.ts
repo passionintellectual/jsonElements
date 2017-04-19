@@ -8,7 +8,7 @@ styleUrls: ['./survey-example-page.component.css']
 })
 export class SurveyExamplePageComponent implements OnInit {
   @Input() questionnaire: any;
-
+  @Input() answers:any;
   constructor() {
     this.questionnaire = [
       {
@@ -25,9 +25,26 @@ export class SurveyExamplePageComponent implements OnInit {
         'allowAttachmentsAndComments': false,
         'vendorFieldMapping': 'vendor.vendorInfo.name1',
         'section': false,
-        'component': 'SaInputComponent'
+        'minlength': 2,
+        'maxlength': 5,
+        'role':'Roeld',
+        'component': 'SaInputComponent',
+        'outputs':{
+          'saValueChanged':(x)=> {
+            console.log('success changed the value to :', x);
+            this.answers['185511'] = x;
+          },
+        'onMouseOver':(x)=>{
+          console.log('mouse over ', x);
+        },
+        'onClick':(x)=>{
+          console.log('Click ', x);
+        }
+      }
       }
     ];
+
+    this.answers={};
   }
 
   ngOnInit() {}

@@ -1,9 +1,14 @@
 <p>
   survey component works!
-
 </p>
-<sa-component [config]="config[0]"></sa-component>
+<pre>{{answers | json}}</pre>
+
+<sa-component [config]="config[0]" [value]="answers[config[0].itemId]"  ></sa-component>
 <hr legeng="survey">
 <!--<md-input-container class="example-full-width">
   <input mdInplaceholderlder="City">
 </md-input-container>-->
+ <pre>{{config|json}}</pre>
+<sa-input [value]="answers[config[0].itemId]"
+          (saValueChanged)="config[0].outputs.saValueChanged($event)"
+></sa-input>
