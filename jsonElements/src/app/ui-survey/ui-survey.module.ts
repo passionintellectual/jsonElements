@@ -9,6 +9,7 @@ import { SaInputComponent } from './sa-input/sa-input.component';
 import { PlaceholderDirective } from './directives/placeholder/placeholder.directive';
 import {NgModelDirective} from "./directives/ngmodel/ng-model.directive";
 import { FormsModule } from '@angular/forms';
+import {SaElementComponent} from "./sa-element/sa-element.component";
 
 @NgModule({
 imports : [
@@ -18,8 +19,8 @@ entryComponents:[SaInputComponent],
   providers: [
      SaComponentFactoryProvider
   ],
-  declarations: [SurveyComponent, SaComponentComponent, SaInputComponent, PlaceholderDirective, NgModelDirective
+  declarations: [SurveyComponent, SaComponentComponent, SaInputComponent, PlaceholderDirective, NgModelDirective,SaElementComponent
   ],
-  exports:[SurveyComponent, SaComponentComponent]
+  exports:[SurveyComponent, SaComponentComponent, SaElementComponent]
 })
 export class UiSurveyModule {}

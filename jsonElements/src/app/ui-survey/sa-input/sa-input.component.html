@@ -1,8 +1,8 @@
 <p>
   {{value}}
   <md-input-container class="example-full-width" required >
-    <input  mdInput
-            [placeholder]="placeholder"
+    <input  #inputElement
+            mdInput
             [ngModel]="value"
             (ngModelChange)="valueChanged($event)"
             max="10"

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import {Subject} from "rxjs";
 @Component({
   selector: 'sa-input',
@@ -40,7 +40,7 @@ export class SaInputComponent implements OnInit, OnChanges {
 saValueChanged?:EventEmitter<any> = new EventEmitter();
 // @Output()
   // valueChanged?:EventEmitter<any> = new EventEmitter();
-  constructor() {
+  constructor(inputElement: ElementRef) {
 
   }
 

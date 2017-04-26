@@ -93,7 +93,6 @@ export class SaComponentComponent implements OnInit,
       });
   }
   loadSaElement() {
-
     // < md-input-container class = "example-full-width" >
     // <input mdInput placeholder="City">
     // </md-input-container>
@@ -122,9 +121,8 @@ export class SaComponentComponent implements OnInit,
 
     setTimeout(()=>{
       debugger;
-    component.instance['placeholder'] = 'ganesh123';
-
-    })
+    // // component.instance['placeholdernew'] = +new Date();
+    });
   }
   ngOnInit() {
 
